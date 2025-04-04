@@ -5,7 +5,7 @@ In your project folder file open terminal and use command 'npm init -y' and 'npm
 your folder structure should be:
   Project folder
          |node_modules  // this will be automatically installed 
-         |packages      // this will be automatically installed 
+         |package       // this will be automatically installed 
          |package-lock  // this will be automatically installed 
          |server.js
          |public
