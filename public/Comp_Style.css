@@ -1,0 +1,218 @@
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Header section */
+.S1 {
+    height: auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f0b8;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.S1-a {
+    display: flex;
+    align-items: center;
+}
+
+.S1-a img {
+    height: 200px;
+    width: auto;
+}
+
+.S1-b {
+    display: flex;
+    align-items: center;
+}
+
+.S1-b nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.S1-b a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    font-size: clamp(14px, 2vw, 16px);
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+/* Main title */
+.Part_2 {
+    text-align: left;
+    font-size: clamp(30px, 5vw, 57px);
+    margin: 40px 20px 20px;
+    text-decoration: none;
+    width: auto;
+}
+
+/* Job listings container */
+.Part_4 {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+/* Job listing card */
+.Sub_4-1 {
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 150px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+}
+
+.Sub_4a {
+    flex: 1;
+    min-width: 200px;
+    padding-right: 20px;
+}
+
+.Sub_4a a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.Sub_4a h1 {
+    font-size: clamp(20px, 3vw, 30px);
+    margin-bottom: 10px;
+}
+
+.Sub_4a p {
+    font-size: clamp(14px, 2vw, 15px);
+    margin-bottom: 15px;
+}
+
+.Sub_4a pre {
+    font-family: 'Inter', sans-serif;
+    white-space: pre-wrap;
+    font-size: clamp(12px, 1.5vw, 14px);
+    color: #797979;
+    word-spacing: normal;
+}
+
+.Sub_4b {
+    flex: 0 0 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Sub_4b img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .S1 {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .S1-a {
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    
+    .S1-b {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .S1-b nav {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .S1-b a {
+        margin: 5px 10px;
+        padding: 8px 12px;
+    }
+    
+    .Part_2 {
+        text-align: center;
+        margin: 30px 10px 20px;
+    }
+    
+    .Sub_4-1 {
+        flex-direction: column;
+    }
+    
+    .Sub_4a {
+        padding-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .Sub_4a pre {
+        text-align: center;
+    }
+    
+    .Sub_4b {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .S1-a img {
+        height: 50px;
+    }
+    
+    .S1-b a {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+    
+    .Part_2 {
+        font-size: 28px;
+        margin: 20px 10px;
+    }
+    
+    .Part_4 {
+        width: 100%;
+        padding: 0 10px;
+    }
+    
+    .Sub_4-1 {
+        padding: 15px;
+    }
+    
+    .Sub_4a h1 {
+        font-size: 22px;
+    }
+    
+    .Sub_4a p {
+        font-size: 14px;
+    }
+    
+    .Sub_4a pre {
+        font-size: 12px;
+    }
+}

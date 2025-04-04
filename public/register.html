@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="Styles/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <input id="username" type="text" placeholder="Enter username" required>
+        <input id="password" type="password" placeholder="Enter password" required>
+        <button type="submit">Register</button>
+        <p id="errormsg" style="color: red;"></p>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("registerForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const errormsg = document.getElementById('errormsg');
+
+        try {
+          const response = await fetch("http://localhost:3000/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            alert("Registration successful! Redirecting to login...");
+            window.location.href = "login.html";
+          } else {
+            errormsg.textContent = data.message;
+          }
+        } catch (error) {
+          errormsg.textContent = "Server error. Try again later.";
+        }
+      });
+    </script>
+  </body>
+</html>

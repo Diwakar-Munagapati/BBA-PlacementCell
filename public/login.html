@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Styles/login-style.css">
+</head>
+<body>
+    <div class="Part_1"></div>
+    
+    <div class="Part_2">
+        <img src="Views/CLUB_LOGO-2.png" alt="Club Logo" class="overlapping-image">
+        
+        <form id="loginForm">
+            <center><h2>Log In</h2></center>
+            <div class="Sub_2a"> 
+                <label for="username">Enrollment No.</label> 
+                <input id="username" type="text" required>
+                
+                <label for="password">Password</label>
+                <input id="password" type="password" required>
+                
+                <button type="submit">Log In</button>
+                <p id="errormsg" style="color: red; text-align: center;"></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errormsg = document.getElementById('errormsg');
+            
+            try {
+                const response = await fetch("http://localhost:3000/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password }),
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert("Login Successful!! Redirecting...");
+                    window.location.href = "home-1.html";
+                } else {
+                    errormsg.textContent = data.message;
+                }
+            } catch (error) {
+                errormsg.textContent = "SERVER ERROR. TRY AGAIN LATER";
+            }
+        });
+    </script>
+</body>
+</html>
